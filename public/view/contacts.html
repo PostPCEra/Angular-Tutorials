@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+
+    <title>AngularJS Routing example</title>
+
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+
+    body {
+      padding-top: 40px;
+      padding-left: 40px;
+      background-color: #F5F5F5;
+    }
+
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+   <div ng-controller="ContactController">
+    <form>
+      <label>Name</label> 
+          <input type="text" name="name" ng-model="newcontact.name"/>
+      <label>Email</label> 
+          <input type="text" name="email" ng-model="newcontact.email"/>
+      <label>Phone</label> 
+          <input type="text" name="phone" ng-model="newcontact.phone"/>
+          <br/>
+          <input type="hidden" ng-model="newcontact.id" />
+       <input type="button" value="Save" ng-click="saveContact()" />
+    </form>
+
+    <table>
+      <thead> 
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="contact in contacts">
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>
+                <a  href="#" ng-click="edit(contact.id)">edit</a> | 
+                <a href="#" ng-click="delete(contact.id)">delete</a>
+            </td>
+         </tr>
+      </tbody>
+    </table>    
+
+</div>
+    
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
+
+ <script src="js/contacts/contacts.js"></script> 
+
+  <!-- some issue with this service/CTRL split into 2 JS files , follow scotch.io JS standards ...
+ <script src="js/contacts/contactsService.js"></script>
+<script src="js/contacts/contactsCtrl.js"></script>
+     -->
+
+  </body>
+</html>
