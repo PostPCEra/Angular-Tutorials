@@ -17,10 +17,10 @@ Node provides the RESTful API. Angular provides the frontend and accesses the AP
 
 ## Tutorial Series
 
-
 You can access each of these 3 tutorials with these URLs
-  http://localhost:8080/app1
-  http://localhost:8080/app2
-  http://localhost:8080/app3
+
+1. http://localhost:8080/app1
+2. http://localhost:8080/app2
+3. http://localhost:8080/app3
 
 
